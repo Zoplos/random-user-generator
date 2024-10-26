@@ -27,7 +27,7 @@ const Card = ({ userData, showMoreInfo, setShowMoreInfo }) => {
     <div className="card-container">
       <div
         id="background"
-        className="absolute top-0 left-0 w-full h-32 rounded-b-3xl bg-accent z-10"
+        className="absolute top-0 left-0 w-full h-32 rounded-b-3xl bg-lightGreen z-10"
       ></div>
       <div className="relative flex flex-col items-center justify-center gap-4 space-y-4 pt-4 z-20">
         <img className="profile-img" src={picture.large} alt={fullName} />
