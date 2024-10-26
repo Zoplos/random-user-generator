@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CardInfo from './CardInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -7,12 +7,9 @@ import {
   faMars,
   faVenus,
 } from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'framer-motion';
 
-const Card = ({ userData }) => {
-  const [showMoreInfo, setShowMoreInfo] = useState(false);
-
-  const handleToggleInfo = () => {
+const Card = ({ userData, showMoreInfo, setShowMoreInfo }) => {
+  const toggleInfo = () => {
     setShowMoreInfo(!showMoreInfo);
   };
 
@@ -20,8 +17,9 @@ const Card = ({ userData }) => {
     return <div>Loading...</div>;
   }
 
-  const { name, gender, email, location, phone, picture, nat } = userData;
-  const info = { email, location, phone, nat };
+  //Data fetched from response stored into variables
+  const { name, gender, email, location, phone, picture, nat, dob } = userData;
+  const info = { email, location, phone, nat, dob };
   const fullName = `${name.first} ${name.last}`;
 
   return (
@@ -49,7 +47,7 @@ const Card = ({ userData }) => {
 
       {/* More/Less info button with conditional rendering*/}
 
-      <button className="group info-btn" onClick={handleToggleInfo}>
+      <button className="group info-btn" onClick={toggleInfo}>
         {showMoreInfo ? (
           <FontAwesomeIcon
             className="text-secondaryGreen group-hover:text-white"

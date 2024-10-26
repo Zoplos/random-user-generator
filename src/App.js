@@ -5,20 +5,14 @@ import GenerateButton from './GenerateButton';
 
 function App() {
   const [userData, setUserData] = useState(null);
+  const [showMoreInfo, setShowMoreInfo] = useState(false);
 
-  // const generate = () => {
-  //   fetch('https://randomuser.me/api/')
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setUserData(data.results[0]);
-  //     })
-  //     .catch((err) => console.error('Error', err));
-  // };
-
+  // Api call using axios
   const generate = async () => {
     try {
       const res = await axios.get('https://randomuser.me/api/');
       setUserData(res.data.results[0]);
+      setShowMoreInfo(false);
     } catch (error) {
       console.error('Error fetching data: ', error);
     }
@@ -31,7 +25,14 @@ function App() {
   console.log(userData);
   return (
     <>
-      {userData && <Card userData={userData} />}
+      {userData && (
+        <Card
+          userData={userData}
+          showMoreInfo={showMoreInfo}
+          setShowMoreInfo={setShowMoreInfo}
+        />
+      )}
+      {/* The Generate Button triggers the UseEffect function for data fetching from api*/}
       <GenerateButton generateUser={generate} />
     </>
   );

@@ -5,10 +5,13 @@ import {
   faLocationDot,
   faPhone,
   faFlag,
+  faCakeCandles,
 } from '@fortawesome/free-solid-svg-icons';
 
 const CardInfo = ({ showMoreInfo, info }) => {
   const location = `${info.location.city}, ${info.location.state}`;
+  const birthday = info.dob.date.slice(0, 10);
+
   return (
     <div className="info-container">
       <div className="flex gap-2 items-center">
@@ -32,8 +35,10 @@ const CardInfo = ({ showMoreInfo, info }) => {
             <FontAwesomeIcon className="text-white mr-2" icon={faFlag} />
             <span>{info.nat}</span>
           </div>
-          <span>extra info</span>
-          <span>extra info</span>
+          <div className="flex gap-2 items-center ">
+            <FontAwesomeIcon className="text-white mr-2" icon={faCakeCandles} />
+            <span>{birthday}</span>
+          </div>
         </>
       )}
     </div>
