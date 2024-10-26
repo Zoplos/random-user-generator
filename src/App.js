@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Card from './Card';
+import GenerateButton from './GenerateButton';
 
 function App() {
+  const [userData, setUserData] = useState(null);
+
+  // const generate = () => {
+  //   fetch('https://randomuser.me/api/')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setUserData(data.results[0]);
+  //     })
+  //     .catch((err) => console.error('Error', err));
+  // };
+
+  const generate = async () => {
+    try {
+      const res = await axios.get('https://randomuser.me/api/');
+      setUserData(res.data.results[0]);
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+    }
+  };
+
+  useEffect(() => {
+    generate();
+  }, []);
+
+  console.log(userData);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {userData && <Card userData={userData} />}
+      <GenerateButton generateUser={generate} />
+    </>
   );
 }
 
