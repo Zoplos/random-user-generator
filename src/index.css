@@ -22,7 +22,7 @@ body {
 }
 
 .card-container {
-  @apply relative container border-2 border-secondaryGreen max-w-md bg-gradient-to-b from-primaryGreen from-10% to-darkerPrimaryGreen overflow-hidden rounded-xl flex flex-col space-y-8 p-8 shadow-md md:max-w-lg;
+  @apply relative container border-2 border-secondaryGreen max-w-md bg-gradient-to-b from-primaryGreen from-10% to-darkerPrimaryGreen overflow-hidden rounded-xl flex flex-col space-y-8 py-8 px-4 shadow-lg;
 }
 
 .info-container {

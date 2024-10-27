@@ -36,9 +36,9 @@ const Card = ({ userData, showMoreInfo, setShowMoreInfo }) => {
 
           {/* Conditional Rendering for gender icon */}
           {gender === 'male' ? (
-            <FontAwesomeIcon className="text-white" icon={faMars} />
+            <FontAwesomeIcon className="text-veryLightGreen" icon={faMars} />
           ) : (
-            <FontAwesomeIcon className="text-white" icon={faVenus} />
+            <FontAwesomeIcon className="text-veryLightGreen" icon={faVenus} />
           )}
         </div>
         <div className="border-b-2 border-secondaryGreen w-full"></div>

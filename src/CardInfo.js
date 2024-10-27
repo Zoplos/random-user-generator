@@ -15,16 +15,22 @@ const CardInfo = ({ showMoreInfo, info }) => {
   return (
     <div className="info-container">
       <div className="flex gap-2 items-center">
-        <FontAwesomeIcon className="text-white mr-2" icon={faEnvelope} />
+        <FontAwesomeIcon
+          className="text-veryLightGreen mr-2"
+          icon={faEnvelope}
+        />
         <span>{info.email}</span>
       </div>
 
       <div className="flex gap-2 items-center ">
-        <FontAwesomeIcon className="text-white mr-2" icon={faLocationDot} />
+        <FontAwesomeIcon
+          className="text-veryLightGreen mr-2"
+          icon={faLocationDot}
+        />
         <span>{location}</span>
       </div>
       <div className="flex gap-2 items-center ">
-        <FontAwesomeIcon className="text-white mr-2" icon={faPhone} />
+        <FontAwesomeIcon className="text-veryLightGreen mr-2" icon={faPhone} />
         <span>{info.phone}</span>
       </div>
       {showMoreInfo && (
@@ -32,11 +38,17 @@ const CardInfo = ({ showMoreInfo, info }) => {
           <div className="border-b-2 border-dotted border-secondaryGreen w-full"></div>
 
           <div className="flex gap-2 items-center ">
-            <FontAwesomeIcon className="text-white mr-2" icon={faFlag} />
+            <FontAwesomeIcon
+              className="text-veryLightGreen mr-2"
+              icon={faFlag}
+            />
             <span>{info.nat}</span>
           </div>
           <div className="flex gap-2 items-center ">
-            <FontAwesomeIcon className="text-white mr-2" icon={faCakeCandles} />
+            <FontAwesomeIcon
+              className="text-veryLightGreen mr-2"
+              icon={faCakeCandles}
+            />
             <span>{birthday}</span>
           </div>
         </>
