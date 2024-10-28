@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from './Card';
-import GenerateButton from './GenerateButton';
+import Card from './components/Card';
+import GenerateButton from './components/GenerateButton';
 
 function App() {
   const [userData, setUserData] = useState(null);
